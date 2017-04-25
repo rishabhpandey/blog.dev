@@ -69,13 +69,11 @@ class HomeController extends Controller
         $user->email = $user['email'] ? $user->email:'';
         $user->password = $user['password'] ? $user->password :'';
         $user->save();
-//        var_dump($user);die;
         return view('edit',compact('user'));
     }
 
     public function update(Request $request , $id)
     {
-        dd($id); echo "bhavin";
         $post = User::find($id);
         $post->name = update($request->name);
         $post->email = $request->email;
