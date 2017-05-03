@@ -47,12 +47,12 @@ class HomeController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        
+         
         if($request->has('id'))
         {
             $user =  User::find($request->get('id'));           
         }else{
-             $user = new User;
+            $user = new User;
         }            
         $user->name = $request->name;
         $user->email = $request->email;
